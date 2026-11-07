@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090b18">
+  <title>CHRONOVA — Your Future, Your Memories</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="background-glow"></div>
+
+  <header class="topbar">
+    <a class="logo" href="#">✦ CHRONOVA</a>
+    <span class="status">YOUR PERSONAL UNIVERSE</span>
+  </header>
+
+  <main class="container">
+
+    <section class="hero">
+      <p class="eyebrow">✧ YOUR STORY DOESN'T END HERE</p>
+      <h1>Dear Future <span>Me.</span></h1>
+      <p class="hero-text">
+        Save a moment today. Discover who you become tomorrow.
+      </p>
+      <a href="#create" class="primary-btn">Create a time capsule ↗</a>
+    </section>
+
+    <section class="stats">
+      <div class="stat-card">
+        <span>✉</span>
+        <h2 id="totalCapsules">0</h2>
+        <p>Capsules created</p>
+      </div>
+      <div class="stat-card">
+        <span>🔒</span>
+        <h2 id="lockedCapsules">0</h2>
+        <p>Waiting to open</p>
+      </div>
+      <div class="stat-card">
+        <span>✧</span>
+        <h2 id="openedCapsules">0</h2>
+        <p>Memories unlocked</p>
+      </div>
+    </section>
+
+    <section class="create-section" id="create">
+      <div class="section-heading">
+        <p class="eyebrow">01 / PRESERVE THIS MOMENT</p>
+        <h2>Create a capsule</h2>
+        <p>Write something your future self should remember.</p>
+      </div>
+
+      <form id="capsuleForm">
+        <label for="capsuleTitle">Capsule title</label>
+        <input
+          type="text"
+          id="capsuleTitle"
+          placeholder="A message from today..."
+          maxlength="70"
+          required
+        >
+
+        <label for="capsuleMessage">Your message</label>
+        <textarea
+          id="capsuleMessage"
+          placeholder="What do you want your future self to know?"
+          rows="6"
+          maxlength="5000"
+          required
+        ></textarea>
+
+        <label for="openDate">When should it open?</label>
+        <input type="date" id="openDate" required>
+
+        <label for="capsuleImage">Add a photo (optional)</label>
+        <input type="file" id="capsuleImage" accept="image/*">
+
+        <button type="submit" class="primary-btn full-btn">
+          Seal my capsule ✦
+        </button>
+      </form>
+      <p class="privacy-note">
+        🔐 Your capsules are currently saved on this device only.
+      </p>
+    </section>
+
+    <section class="collection-section">
+      <div class="section-heading">
+        <p class="eyebrow">02 / YOUR PERSONAL ARCHIVE</p>
+        <h2>Your time capsules</h2>
+        <p>Every moment has its own place in time.</p>
+      </div>
+
+      <div id="capsuleList" class="capsule-list">
+        <div class="empty-state">
+          <span>✧</span>
+          <h3>Your universe is waiting</h3>
+          <p>Create your first capsule to begin your journey.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="logo">✦ CHRONOVA</div>
+      <p>Made of memories. Built for tomorrow.</p>
+      <small>© 2026 CHRONOVA</small>
+    </footer>
+
+  </main>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
