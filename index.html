@@ -4,52 +4,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <meta name="theme-color" content="#090b18">
+  <meta name="description" content="A personal time capsule for messages and memories to your future self.">
+
   <title>CHRONOVA — Your Future, Your Memories</title>
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <div class="background-glow"></div>
-
-  <header class="topbar">
-    <a class="logo" href="#">✦ CHRONOVA</a>
-    <span class="status">YOUR PERSONAL UNIVERSE</span>
+  <header class="header">
+    <div class="logo">✦ CHRONOVA</div>
+    <span class="header-tag">YOUR PERSONAL TIME CAPSULE</span>
   </header>
 
   <main class="container">
 
     <section class="hero">
-      <p class="eyebrow">✧ YOUR STORY DOESN'T END HERE</p>
-      <h1>Dear Future <span>Me.</span></h1>
-      <p class="hero-text">
-        Save a moment today. Discover who you become tomorrow.
-      </p>
-      <a href="#create" class="primary-btn">Create a time capsule ↗</a>
+      <div class="hero-content">
+        <p class="eyebrow">A MESSAGE BEYOND TODAY</p>
+        <h1>Your future is<br><span>waiting for you.</span></h1>
+        <p class="hero-description">
+          Save your thoughts, dreams and memories.
+          Lock them away and let your future self discover them.
+        </p>
+      </div>
+      <div class="hero-symbol">✧</div>
     </section>
 
     <section class="stats">
       <div class="stat-card">
-        <span>✉</span>
-        <h2 id="totalCapsules">0</h2>
-        <p>Capsules created</p>
+        <span>Total capsules</span>
+        <strong id="totalCapsules">0</strong>
       </div>
       <div class="stat-card">
-        <span>🔒</span>
-        <h2 id="lockedCapsules">0</h2>
-        <p>Waiting to open</p>
+        <span>Locked</span>
+        <strong id="lockedCapsules">0</strong>
       </div>
       <div class="stat-card">
-        <span>✧</span>
-        <h2 id="openedCapsules">0</h2>
-        <p>Memories unlocked</p>
+        <span>Opened</span>
+        <strong id="openedCapsules">0</strong>
       </div>
     </section>
 
-    <section class="create-section" id="create">
+    <section class="create-section">
       <div class="section-heading">
-        <p class="eyebrow">01 / PRESERVE THIS MOMENT</p>
-        <h2>Create a capsule</h2>
+        <p class="eyebrow">BEGIN A NEW MEMORY</p>
+        <h2>Create a time capsule</h2>
         <p>Write something your future self should remember.</p>
       </div>
 
@@ -58,7 +64,7 @@
         <input
           type="text"
           id="capsuleTitle"
-          placeholder="A message from today..."
+          placeholder="A letter to my future self..."
           maxlength="70"
           required
         >
@@ -66,7 +72,7 @@
         <label for="capsuleMessage">Your message</label>
         <textarea
           id="capsuleMessage"
-          placeholder="What do you want your future self to know?"
+          placeholder="Write your thoughts, dreams and memories..."
           rows="6"
           maxlength="5000"
           required
@@ -75,43 +81,30 @@
         <label for="openDate">When should it open?</label>
         <input type="date" id="openDate" required>
 
-        <label for="capsuleImage">Add a photo (optional)</label>
+        <label for="capsuleImage">Attach a photo (optional)</label>
         <input type="file" id="capsuleImage" accept="image/*">
 
-        <button type="submit" class="primary-btn full-btn">
-          Seal my capsule ✦
-        </button>
+        <button type="submit">Seal my capsule ✦</button>
       </form>
-      <p class="privacy-note">
-        🔐 Your capsules are currently saved on this device only.
-      </p>
     </section>
 
-    <section class="collection-section">
+    <section class="archive-section">
       <div class="section-heading">
-        <p class="eyebrow">02 / YOUR PERSONAL ARCHIVE</p>
-        <h2>Your time capsules</h2>
-        <p>Every moment has its own place in time.</p>
+        <p class="eyebrow">YOUR PERSONAL UNIVERSE</p>
+        <h2>Your memory archive</h2>
+        <p>Every capsule has its own special moment.</p>
       </div>
 
-      <div id="capsuleList" class="capsule-list">
-        <div class="empty-state">
-          <span>✧</span>
-          <h3>Your universe is waiting</h3>
-          <p>Create your first capsule to begin your journey.</p>
-        </div>
-      </div>
+      <div id="capsuleList"></div>
     </section>
-
-    <footer>
-      <div class="logo">✦ CHRONOVA</div>
-      <p>Made of memories. Built for tomorrow.</p>
-      <small>© 2026 CHRONOVA</small>
-    </footer>
 
   </main>
 
-  <div id="toast" class="toast"></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <footer class="footer">
+    <p>CHRONOVA ✦ Every moment deserves to be remembered.</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
