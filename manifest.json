@@ -1,0 +1,21 @@
+
+{
+  "id": "/CHRONOVA/",
+  "name": "CHRONOVA — Your Future, Your Memories",
+  "short_name": "CHRONOVA",
+  "description": "A personal time capsule for messages and memories to your future self.",
+  "start_url": "/CHRONOVA/",
+  "scope": "/CHRONOVA/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#090b18",
+  "theme_color": "#090b18",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
